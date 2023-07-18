@@ -20,15 +20,15 @@ export default class App// Collection of available Apps to the system
     MainScriptPath;     // Path to the main JS file to be started when the app is launched
     Index;              // Boolean: If true, app will be displayed in start menu, App list, Dock etc...
     StartType;          // Either "foreground" or "background". Foreground will show an application window on launch, background will only execute the JS.
-    constructor(appoptions)
+    constructor(AppOptions)
     {
         this.#ID = System.GenerateUID();
-        this.Name = appoptions.name;
-        this.Description = appoptions.description;
-        this.MainPagePath = appoptions.mainpage || null;
-        this.MainScriptPath = appoptions.mainscript || null;
-        this.Index = appoptions.index || false;
-        this.StartType = appoptions.starttype || "background"
+        this.Name = AppOptions.name; //TODO: update object properties to CamelCase
+        this.Description = AppOptions.description;
+        this.MainPagePath = AppOptions.mainpage || null;
+        this.MainScriptPath = AppOptions.mainscript || null;
+        this.Index = AppOptions.index || false;
+        this.StartType = AppOptions.starttype || "background"
     }
     Run()
     {
