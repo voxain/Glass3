@@ -1,0 +1,56 @@
+@keyframes wallpaperIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes desktopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+body, html {
+  background: #2d2a2e;
+  font-family: Poppins, Loma, Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop {
+  height: calc(100vh - 4rem);
+  width: calc(100vw - 4rem);
+  margin: 2rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  animation: desktopIn 0.3s ease forwards;
+  background: black;
+}
+.desktop div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.desktop .wallpaper {
+  background-image: url("/src/System/Media/Backgrounds/Displacement.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  animation: wallpaperIn 1s ease forwards;
+}
+.desktop .foreground {
+  box-sizing: border-box;
+  padding: 2rem;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,38 @@
+@use 'animations'
+    
+body, html
+    background: #2d2a2e
+    font-family: Poppins, Loma, Arial, sans-serif
+    color: white
+    margin: 0
+    padding: 0
+
+.desktop
+    height: calc(100vh - 4rem)
+    width: calc(100vw - 4rem)
+    margin: 2rem
+    border-radius: 20px
+    box-sizing: border-box
+    box-shadow: 0px 7px 20px rgba(0,0,0,.5)
+    position: relative
+    overflow: hidden
+    animation: desktopIn .3s ease forwards // will set opacity to .5
+    background: black // Background is black to allow for simple wallpaper through opacity adjustments on .wallpaper
+
+    div
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        width: 100%
+
+    .wallpaper
+        background-image: url('/src/System/Media/Backgrounds/Displacement.jpg')
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+        animation: wallpaperIn 1s ease forwards // will set opacity to .5
+
+    .foreground
+        box-sizing: border-box
+        padding: 2rem

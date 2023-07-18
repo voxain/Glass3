@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Glass³</title>
+        <meta charset="utf-8" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.5/cash.min.js"></script>
+
+        <script>
+            $(() => {
+                $(document.body).on("keydown", e => {
+                    if(e.keyCode == 46){
+                        alert("Come back later for more configuration options")
+                    }
+                });
+                setTimeout(() =>{
+                    window.location.href = '/src/System/main.html';
+                }, 7000);
+            });
+        </script>
+
+        <style>
+            body, html{
+                background: #2d2a2e;
+                color: #eee;
+                font-family: Poppins, Loma, Arial, sans-serif;
+            }
+            body{
+                animation: fadeOut 1s ease forwards;
+                animation-delay: 6s;
+            }
+            .container{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .splitLoader{
+                display: flex;
+                width: auto;
+                height: auto;
+                flex-direction: column;
+            }
+            .splitLoader div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .logo{
+                font-size: 6rem;
+                color: #2d2a2e;
+                animation: logoIn 3s ease forwards;
+                font-weight: lighter;
+                padding: 1rem;
+            }
+            .logo span::after{
+                content: "³";
+                animation: threeIn .5s ease forwards;
+                animation-delay: 3s;
+            }
+            .loader{
+                padding-top: 1rem;
+                height: 2px;
+                width: 25rem;
+            }
+
+            .spinner{
+                width: .2rem;
+                height: .2rem;
+                border-radius: 100px;
+                border: 2px solid  transparent;
+                border-top-color: #eee;
+                animation: spin .5s linear infinite;
+            }
+            @keyframes spin {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes threeIn {
+                0%, 100%{
+                    color: #eee;
+                }
+                50%{
+                    color: #42b3ff;
+                }
+            }
+            @keyframes fadeOut {
+                0%{
+                    opacity: 1;
+                }
+                100%{
+                    opacity: 0;
+                }
+            }
+            @keyframes logoIn {
+                0%{
+                    text-shadow: 0px 7px 0px transparent;
+                    color: #2d2a2e;
+                }
+                25%{
+                    text-shadow: 0px 0px 30px white;
+                    color: #2d2a2e;
+                }
+                50%{
+                    text-shadow: 0px 0px 30px white;
+                    color: #2d2a2e;
+                }
+                75%{
+                    color: #eee;
+                }
+                100%{
+                    text-shadow: 0px 0px 0px white;
+                    color: #eee;
+                }
+            }
+            .options{
+                opacity: .3;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                height: 4rem;
+                display: flex;
+                justify-content: center;
+            }
+            .bar-container{
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,.1);
+                position: relative;
+                border-radius: 100px;
+                overflow: hidden;
+                animation: loading 1s ease reverse forwards;
+                animation-delay: 5s;
+            }
+            .bar-inner{
+                width: 20%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                background: #eee;
+                animation: loading 5s cubic-bezier(0.52, 0.02, 0, 0.4) forwards;
+            }
+            @keyframes loading {
+                0%{
+                    width: 0%;
+                }
+                100%{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="splitLoader">
+                <div class="logo">
+                    <span>Glass</span>
+                </div>
+                <div class="loader">
+                    <div class="bar-container">
+                        <div class="bar-inner">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="options">
+            Hit "DEL" for configuration options.
+        </div>
+    </body>
+</html>
