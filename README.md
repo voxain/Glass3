@@ -6,7 +6,7 @@ This project is heavily inspired by Kurisubrooks' [Glass2](https://github.com/ku
 
 ### Planned features
 * Customizable desktop
-* Multiple users & Permissions
+* Multiple users
 * App Store
 * Open App system for third-party apps
 * File System with Explorer
