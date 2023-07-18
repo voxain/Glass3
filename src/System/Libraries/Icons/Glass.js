@@ -1,3 +1,14 @@
+/** 
+ * * GlassIcons
+ * 
+ * Namespace: System.MediaLibrary.Icons.GlassIcons
+ * 
+ * Glass³'s default set of Icons, available via System.MediaLibrary.Icons.GlassIcons
+ * This will be the library that standardizes the default Icon names.
+ * 
+ * TODO: Make an app that views all icons including their names for easier programming.
+ */
+
 import { IconLibrary, Icon } from "./Icons.js";
 
 // Example for an Icon Library

@@ -1,3 +1,22 @@
+/** 
+ * * FileSystem
+ * 
+ * Namespace: System.FileSystem
+ * 
+ * The filesystem will be the main keeper of data in the system. While apps will (at least for now) not have their own files in this storage and rather be served by the webserver,
+ * it keeps track of user saved files and configuration data that should not be kept in the registry (like App settings).
+ * 
+ * ! In the future, I plan on making the FileSystem store all files of apps, to make it possible to locally store downloaded apps from the app store.
+ *   I don't know what that will look like yet.
+ * 
+ * The FileSystem has a manager class called FS.
+ * It will be the interface for interactions with the "gfs" (glass file system).
+ * It has a map of virtual "drives", that can be any size.
+ * Any drive as well as folders will have as many children of either the type Directory or File as you want. They will both be stored and outputted from the same Object.
+ * 
+ * TODO: Provide methods that filter and sort after directories, calculate a file/folder's size etc...
+ */
+
 import { System } from "/src/System/OS.js";
 import GlassIcons from "../Icons/Glass.js";
 

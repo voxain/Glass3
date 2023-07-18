@@ -1,3 +1,14 @@
+/** 
+ * * IconLibrary
+ * 
+ * Namespace: System.MediaLibrary.Icons
+ * 
+ * The IconLibrary will provide any app that need it with icons from various choosable themes.
+ * It will probide the standardized "Icon" element, so every app can use it in the same way.
+ * 
+ * ! In the future, it will allow for loading Icons from different themes depending on a regisrty setting, to allow for more customization.
+ */
+
 export class IconLibrary{
     Name;           // This will be the identifier
     FriendlyName;

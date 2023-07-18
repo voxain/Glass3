@@ -1,6 +1,18 @@
+/** 
+ * * AppManager
+ * 
+ * Namespace: System.Registry.Apps
+ * 
+ * This is a helper script which provides classes for Apps and Services - The system does not have it's own AppManager *yet*, though coming with the App store system, it might need one.
+ * The App directory is currently handled by the Registry.
+ * 
+ * ! See the note in System/OS.js for an important note about App loading.
+ */
+
 import { System } from "../OS.js";
 
-export default class App {      // Collection of available Apps to the system
+export default class App// Collection of available Apps to the system
+{      
     #ID;                // Automatically assigned App ID
     Name;               // Name of the application
     Description;        // Short App description
@@ -8,7 +20,8 @@ export default class App {      // Collection of available Apps to the system
     MainScriptPath;     // Path to the main JS file to be started when the app is launched
     Index;              // Boolean: If true, app will be displayed in start menu, App list, Dock etc...
     StartType;          // Either "foreground" or "background". Foreground will show an application window on launch, background will only execute the JS.
-    constructor(appoptions){
+    constructor(appoptions)
+    {
         this.#ID = System.GenerateUID();
         this.Name = appoptions.name;
         this.Description = appoptions.description;
@@ -17,10 +30,12 @@ export default class App {      // Collection of available Apps to the system
         this.Index = appoptions.index || false;
         this.StartType = appoptions.starttype || "background"
     }
-    Run() {
-        System.TaskList.RunTask(new Task(this));
+    Run()
+    {
+        System.TaskManager.RunApp(new Task(this));
     }
-    getID(){
+    getID()
+    {
         return this.#ID;
     }
 }
