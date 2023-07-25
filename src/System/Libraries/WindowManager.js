@@ -107,4 +107,6 @@ export class Window
         // TODO
         // ! Implement (optional) killing of App instance when last window is closed
     }
+
+    // TODO: Add event emitters for when something is updated, so Docks/other apps can react to title changes etc...
 }
