@@ -3,7 +3,7 @@ import Service from "../../System/Libraries/AppManager.js";
 
 export function Register(){
     
-    System.Registry.RegisterApp(
+    let dock = System.Registry.RegisterApp(
         new Service({
             name: "Bulldock",
             description: "A Taskbar-like Dock for Glass³",
@@ -13,4 +13,6 @@ export function Register(){
             startup: "automatic"
         })
     );
+
+    System.Registry.RegisterStartup(dock.getID());
 }

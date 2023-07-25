@@ -20,6 +20,7 @@ export default class App// Collection of available Apps to the system
     MainScriptPath;     // Path to the main JS file to be started when the app is launched
     Index;              // Boolean: If true, app will be displayed in start menu, App list, Dock etc...
     StartType;          // Either "foreground" or "background". Foreground will show an application window on launch, background will only execute the JS.
+    AllowMultipleInstcances; // Self-explanatory
     constructor(AppOptions)
     {
         this.#ID = System.GenerateUID();
@@ -29,11 +30,16 @@ export default class App// Collection of available Apps to the system
         this.MainScriptPath = AppOptions.mainscript || null;
         this.Index = AppOptions.index || false;
         this.StartType = AppOptions.starttype || "background"
+        this.AllowMultipleInstcances = AppOptions.AllowMultipleInstances || false
     }
     Run()
     {
         System.TaskManager.RunApp(new Task(this));
     }
+    /**
+     * Returns the App's assigned internal ID
+     * @returns {string}
+     */
     getID()
     {
         return this.#ID;

@@ -20,6 +20,7 @@ export default class Registry
     static RegisterApp(a) 
     {
         this.#AppList[a.getID()] = a;
+        return a;
     }
 
     /**
@@ -35,10 +36,28 @@ export default class Registry
 
     /**
      * Gives back a directory of all registered ("installed") apps.
-     * @returns {{}App}
+     * @returns {App{}}
      */
     static GetAppList = () => 
     {
         return this.#AppList;
+    }
+
+    /**
+     * Gives back ann App object based on the given ID.
+     * @returns {App}
+     */
+    static GetApp = (id) => 
+    {
+        return this.#AppList[id];
+    }
+
+    /**
+     * Gives back a directory of all apps that are registered for automatic startup.
+     * @returns {AppID{}}
+     */
+    static GetStartupList = () => 
+    {
+        return this.#StartupApps;
     }
 }
