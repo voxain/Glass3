@@ -1,4 +1,6 @@
-@use 'animations'
+@use 'animations'   // CSS Animations
+@use 'desktop'      // General desktop area
+@use 'frames'       // Window frame designs
     
 body, html
     background: #2d2a2e
@@ -19,7 +21,7 @@ body, html
     animation: desktopIn .3s ease forwards // will set opacity to .5
     background: black // Background is black to allow for simple wallpaper through opacity adjustments on .wallpaper
 
-    div
+    div.section
         position: absolute
         left: 0
         top: 0
@@ -33,6 +35,9 @@ body, html
         background-size: cover
         animation: wallpaperIn 1s ease forwards // will set opacity to .5
 
-    .foreground
+    .icons
         box-sizing: border-box
         padding: 2rem
+
+    .windows
+        position: relative
