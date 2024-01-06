@@ -23,7 +23,7 @@ export default new IconLibrary({
     Name: "folder",
     FriendlyName: "Folder",
     Description: "An empty folder",
-    FileURL: "/"
+    FileURL: "/src/Apps/Bulldock/assets/@1x.png"
 }))
 .AddIcon(new Icon({
     Name: "file",

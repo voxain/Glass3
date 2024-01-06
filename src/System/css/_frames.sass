@@ -1,13 +1,18 @@
+@use 'theme'        // Color variables n stuff
+
 .window
     width: 40rem
     height: 30rem
-    border-radius: 7px
+    border-radius: 12px
     overflow: hidden
     box-shadow: 0px 7px 14px rgba(0,0,0,.3)
-    border: 1px solid rgba(0,0,0,.1)
-    background: rgba(0,0,0,.3)
+    background: rgba(203, 203, 203, 0.3)
     position: absolute
+<<<<<<< Updated upstream
     backdrop-filter: blur(100px)
+=======
+    backdrop-filter: blur(50px)
+>>>>>>> Stashed changes
 
     .frame
         width: 100%
@@ -40,8 +45,31 @@
                 align-items: center
 
             .controls
-                width: 4rem
+                width: 5rem
                 height: 100%
+                display: flex
+                flex-direction: row
+                justify-content: space-evenly
+                align-items: center
 
+                div
+                    width: .8rem
+                    height: .8rem
+                    border-radius: 100px
+
+                    &.maximize
+                        background: theme.$success
+                        &:hover
+                            background: theme.$success-dark
+                    &.minimize
+                        background: theme.$warning
+                        &:hover
+                            background: theme.$warning-dark
+                    &.close
+                        background: theme.$error
+                        &:hover
+                            background: theme.$error-dark
+
+                
         .mainWindow
             flex: 1

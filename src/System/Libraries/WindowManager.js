@@ -41,7 +41,7 @@ export default class GWM
      * This method should be used primarily by App launchers and docks.
      */
     {
-        console.log(new Window({Title: "Dock"}))
+        console.log(new Window({Title: "Dock", Icon: Glass.GetIcon("folder")}))
     }
 }
 
@@ -123,7 +123,7 @@ export class Window
         
             inertia: true
           }).draggable({
-            allowFrom: '.titlebar',
+            allowFrom: '.title',
             // enable inertial throwing
             inertia: true,
             // keep the element within the area of it's parent
